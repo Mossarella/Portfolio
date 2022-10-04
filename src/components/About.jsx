@@ -1,47 +1,61 @@
-import React, { Component } from 'react';
-export default class About extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <section id="about">
-         <div className="row">
+import React from 'react';
+import { Container,Row,Col,Nav,Navbar,NavDropdown  } from "react-bootstrap";
 
-            <div className="three columns">
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid,brands} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
-               <img className="profile-pic"  src="images/profilepic.jpg" alt="" />
 
-            </div>
 
-            <div className="nine columns main-col">
+function About(){
+  return (
+      <section className="about">
+  
+   
 
-               <h2>About Me</h2>
-               <p>
-               {
-                 resumeData.aboutme
-               }
-               </p>
+      <Row className='row-flex'>
+      <Col sm={12} md={12} lg={8} className="textCol">
+  
+        <h3 className='howdy'>
+        Howdy! 
+        </h3>
 
-               <div className="row">
+        <span>
+        I’m Noppheera, 
+        </span>
+      
+        <h3>
+        Web developer that Currently build stuff and very passionate about it.
+        </h3>
+  
+        <p>
+        I love to create various things. 
+        And I’m ready to step out, to be part of your team and make your ambitious goal become a little more clearer together.
+        </p>
 
-                  <div className="columns contact-details">
+      
+      </Col>
+      <Col sm={12} md={12} lg={4} className="picCol">
+        <div className='aboutPicDiv'>
+        
+        <img src="/images/S__3325957.jpg" alt="" className='aboutPic' />
+        </div>
+  
+      </Col>
+      
+    </Row>
+    <Row>
+    <div className='aboutGetToKnow'>
+    <h3>
+    Let’s get to know each other a little more
+    </h3>
+    <span>
+    scroll down!
+    </span>
+    </div>
+    </Row>
+    </section>);
 
-                  <h2>Contact Details</h2>
-                  <p className="address">
-       						<span>{resumeData.name}</span>
-                     <br></br>
-       						   <span>
-                     {resumeData.address}
-                    </span>
-                    <br></br>
-                    <span>{resumeData.website}</span>
-       					   </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-    );
-  }
+      
 }
 
 export {About};
