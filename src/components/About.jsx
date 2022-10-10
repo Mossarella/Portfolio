@@ -3,56 +3,53 @@ import { Container,Row,Col,Nav,Navbar,NavDropdown  } from "react-bootstrap";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid,brands} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-
+import {BsFillMouseFill} from "react-icons/bs";
 
 
 function About(){
   return (
-      <section className="about">
+      <section className="about classMargin" id='about'>
   
    
 
-      <Row className='row-flex'>
-      <Col sm={12} md={12} lg={8} className="textCol">
+      
   
         <h3 className='howdy'>
         Howdy! 
         </h3>
 
-        <span>
-        I’m Noppheera, 
+        <span className='highLight'>
+        I’m Noppheera B.  
         </span>
-      
-        <h3>
-        Web developer that Currently build stuff and very passionate about it.
+        <div className='aboutDescText'>
+        <h3 className='aboutDescMain'>
+        Web developer based in Bangkok, that currently build stuff 
+    
+        and very passionate about it.
         </h3>
-  
-        <p>
-        I love to create various things. 
-        And I’m ready to step out, to be part of your team and make your ambitious goal become a little more clearer together.
-        </p>
-
-      
-      </Col>
-      <Col sm={12} md={12} lg={4} className="picCol">
-        <div className='aboutPicDiv'>
-        
-        <img src="/images/S__3325957.jpg" alt="" className='aboutPic' />
         </div>
   
-      </Col>
+        <div className='aboutDescSubText'>
+        <p>
+        I love to create various things. 
+        And ready to be part of your team 
+        
+        and make your ambitious goal become a little more clearer together.
+        </p>
+        </div>
+        
       
-    </Row>
-    <Row>
+      
+
     <div className='aboutGetToKnow'>
-    <h3>
-    Let’s get to know each other a little more
-    </h3>
-    <span>
-    scroll down!
-    </span>
+    <h6>
+    <span><BsFillMouseFill className="icon mouseWheel"/></span>
+    &nbsp;Let’s get to know each other a little more&nbsp;
+    <span><BsFillMouseFill className="icon mouseWheel"/></span>
+    </h6>
+   
     </div>
-    </Row>
+ 
     </section>);
 
       

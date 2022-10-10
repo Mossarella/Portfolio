@@ -2,8 +2,8 @@
 :root {
   --myPadding0: 0em;
   --mypadding25:2.5em;
-  --myPadding5: 5em;
-  --myPaddingSide: 7em;
+  --myPadding4: 4em;
+  --myPaddingSide: 8em;
   --myBlack: #201f1f;
   --myBg: #f8f5ef;
   --myMain: #ff6a18;
@@ -14,13 +14,7 @@
   --myFontWeightThin:400;
   --myFontStyleItalic:italic;
 }
-/* medium */
-@media only screen and (max-width: 768px) {
-  :root {
 
-    --myPaddingSide: 2em;
-  }
-}
 
 /* default */
 * {
@@ -62,7 +56,11 @@ body {
   background-color: var(--myBg);
   margin: auto;
   line-height: 1.75;
-
+  scroll-behavior: smooth
+}
+.classMargin{
+  max-width: 1200px;
+  margin: 0 auto;
 }
 /* select */
 ::selection{
@@ -71,21 +69,31 @@ body {
 }
 
 /* icon */
-.icon {
+button .icon,.icon
+{
   color: var(--myBlack);
 }
-.icon :hover{
+
+button:hover .icon,.icon:hover{
   color: #ff6a18;
 }
+.mouseWheel{
+  width: 20px;
+  height: auto;
+  vertical-align: baseline;
+}
+
+
 /* header */
 .header{
 
-  width: 100vw;
-  height: 110px;
+  height: 80px;
+  position: relative;
   background-color: magenta;
+
 }
 .mainLogo {
-  width: 60px;
+  width: 45px;
   height: auto;
   margin-left: -3px;
 }
@@ -102,13 +110,16 @@ body {
 }
 
 .nav {
-  height: 110px;
+  
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 999;
   transition: all 300ms ease-in-out;
+  height: 80px;
+
+
 
 
 
@@ -121,7 +132,7 @@ body {
   color: var(--myBlack);
   font-family: "Space Mono", monospace;
   
-  background-color: green;
+  background-color: rgba(16, 177, 100, 0.485);
 }
 .navbar-toggler,
 .navbar-toggler:focus,
@@ -131,7 +142,16 @@ body {
   box-shadow: none;
   border: none;
 }
-.hamburger{
+.nav-link{
+  padding: 0;
+}
+.hamburgerButton{
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+.hamburgerIcon{
   width: 30px;
   height: auto;
 }
@@ -140,109 +160,256 @@ body {
 }
 
 /* about */
+/* about2 */
 .about {
   text-align: justify;
-  padding-top: var(--myPadding5);
-  padding-bottom: var(--myPadding5);
+  padding-top: var(--myPadding4);
+  padding-bottom: var(--myPadding4);
+
   padding-left: var(--myPaddingSide);
   padding-right: var(--myPaddingSide);
 
+  display: block;
   background-color: red;
+  
+  height: calc(100vh - 80px);
+  height: -moz-calc(100vh - 80px);
+  height: -webkit-calc(100vh - 80px);
+
+
 
 }
 .about span {
-  font-size: clamp(2em, 8vw, 3em);
-  font-weight: var(--myFontWeightThick);
+  font-size: clamp(1.5em, 6vw, 3em);
+  font-weight: 700;
+
+
+}
+.highLight{
   background-color: var(--myMain);
   color: var(--myBlack);
 }
 .howdy {
   font-style: var(--myFontStyleItalic);
-}
-.about h3 {
-  font-size: clamp(1em, 8vw, 2em);
+  font-size: clamp(0.5em, 6vw, 2em);
   font-weight: var(--myFontWeightThin);
+  
+}
+.aboutDescMain {
+  font-size: clamp(0.5em, 6vw, 2em);
+  font-weight: var(--myFontWeightThin);
+  font-family: var(--myMainFont);
+
+
 }
 .about p {
   font-weight: var(--myFontWeightThin);
-  font-size: 0.8em;
+  font-size: clamp(0.8em, 6vw, 0.8em);
   font-family: var(--mySubFont);
 }
+.about h6 {
+  font-weight: var(--myFontWeightThin);
+  font-size: clamp(0.2em, 3vw, 0.8em);
+
+  background-color: blue;
+  font-family: var(--myMainFont);
+
+    text-align: center;
+ 
+}
+.aboutDescText{
+  background-color: blue;
+  left: 0;
+  padding-right: 8em;
+
+  
+}
+.aboutDescSubText{
+  background-color: gold;
+  left: 0;
+  padding-right: 16em;
+
+}
+
 .row-flex {
   display: flex;
   flex-wrap: wrap;
 }
+/* title */
+
+.title{
+  font-family: var(--myMainFont);
+  font-weight: var(--myFontWeightThick);
+
+}
+.underLine{
+  background-color: var(--myBlack);
+  height: 1.5px;
+
+}
+
+
+/* desc */
+.desc {
+  
+  padding-top: calc(2.5em + 80px);
+  padding-bottom: var(--mypadding25);
+  padding-left: var(--myPaddingSide);
+  padding-right: var(--myPaddingSide);
+
+
+  background-color: burlywood;
+  
+  display: flex;
+
+
+}
+.desc p{
+  font-size: 0.8em;
+  font-weight: var(--myFontWeightThin);
+  font-family: var(--mySubFont);
+
+
+}
 .textCol{
   background-color: blueviolet;
+  text-align: justify;
 }
-.picCol{
+.descPicCol{
   background-color: brown;
-}
-.aboutPicDiv{
-
   display:flex;
+  flex-wrap: wrap;
   align-items:center;
   justify-content:center;
+ 
+}
+.descPicDiv{
+
+
+
+
+  width: 100%;
   height: 100%;
-  
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:center;
   background-color: aquamarine;
 
 }
-.aboutPic {
+.descAboutPic {
   /* display: flex;
   justify-content: center;
 
   
   margin: auto; */
-  width: 220px;
-  height: auto;
+  overflow: hidden;
+  width: auto;
+  height: 300px;
+
 
  
 
   
 }
-
 /* home */
-.question{
-  padding-top: var(--myPadding5);
-  padding-bottom: var(--myPadding5);
+.home {
+
+  padding-bottom: var(--myPadding4);
   padding-left: var(--myPaddingSide);
   padding-right: var(--myPaddingSide);
   background-color: green;
 }
+.question{
+  height: 80px;
+  background-color: red;
+  text-align: center;
+}
+
 
 /* footer */
 .footer {
   padding-top: var(--mypadding25);
-  padding-bottom: var(--mypadding25);
+  padding-bottom: 1.5em;
   padding-left: var(--myPaddingSide);
   padding-right: var(--myPaddingSide);
 
-  margin: auto;
 
-  background-color: var(--myBlack);
+  background-color: rosybrown;
 }
 .footerPic {
-  width: 80px;
+  width: 75px;
   height: auto;
+  border-radius: 100%;
 }
 .footer p {
   font-weight: 400;
-  font-size: 0.5em;
+  /* font-size: 0.7em; */
+  font-size: clamp(0.2em, 3vw, 0.7em);
   font-family: "Space Mono", monospace;
   color: var(--myWhite);
+  margin-bottom: 0;
 }
 
+.footerReachDiv,.footerDescDiv,.footerPicDiv{
+  display: flex;
+
+  margin: auto 0;
+
+}
+.footerReachDiv{
+  justify-content: end;
+
+  text-align: right;
+
+}
+
+.footerDescDiv{
+  
+  text-align: left;
+}
+.footer .icon{
+  width: 20px;
+  padding-left: 6px;
+  height: auto;
+}
+.footCol{
+
+  padding-bottom: 1em;
+
+
+}
+.footCol1{
+  display: flex;
+  justify-content: start;
+}
+.footCol2{
+  display: flex;
+  justify-content: start;
+}
+.footCol3{
+  display: flex;
+  justify-content: end;
+}
+/* work */
+.frontEndRow{
+  display: flex;
+  flex-direction: row;
+}
+.skillBox{
+  padding: 0 10px;
+  text-align: center;
+}
 /* contact */
 .contact {
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
+  padding-top: var(--mypadding25);
+  padding-bottom: var(--myPadding4);
   padding-left: var(--myPaddingSide);
   padding-right: var(--myPaddingSide);
   margin: auto;
   line-height: 1.75;
 
-  background-color: green;
+  background-color: orange;
 }
 .contact p {
   text-align: center;
@@ -268,12 +435,100 @@ body {
 .mySwiper {
   padding-top: var(--mypadding25);
   padding-bottom: var(--mypadding25);
-  padding-left: var(--myPaddingSide);
-  padding-right: var(--myPaddingSide);
+
   background-color: blue;
 
   /* background-color: green; */
 }
+
+.embedBook{
+  width: 800px;
+  height: 800px;
+}
+
+/* popUp */
+.popUp{
+  background-color: rgba(34, 34, 34, 0.673);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+/* medium */
+@media only screen and (max-width: 1199.98px) {
+  
+  :root {
+
+    --myPaddingSide: 6em;
+
+  }
+
+
+}
+
+@media only screen and (max-width: 991.98px) {
+
+  :root {
+
+    --myPaddingSide: 4em;
+
+  }
+
+  .aboutDescText{
+    padding-right: 4em;
+
+  }
+  .aboutDescSubText{
+    padding-right: 8em;
+
+  }
+}
+@media only screen and (max-width: 767.98px){
+  :root {
+
+    --myPaddingSide: 2em;
+
+  }
+
+  .aboutDescText{
+    padding-right: 0em;
+
+  }
+  .aboutDescSubText{
+    padding-right: 4em;
+
+  }
+  .footerReachDiv,.footerDescDiv,.footerPicDiv{
+    text-align: center;
+  
+  }
+  .footCol1{
+    display: flex;
+    justify-content: center;
+  }
+  .footCol2{
+    display: flex;
+    justify-content: center;
+  }
+  .footCol3{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .hamburgerButton{
+    display: none;
+    
+  }
+
+}
+
+
+
 /* header {
   background-color: #f5ba13;
   margin: auto -16px;

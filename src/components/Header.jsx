@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
+import { NavPopUp } from "./NavPopUp";
 import { Container,Row,Col,Nav,Navbar,NavDropdown, Button  } from "react-bootstrap";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +9,19 @@ import { solid,brands} from '@fortawesome/fontawesome-svg-core/import.macro' // 
 
 
 function Header(props) {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  
+  
+
+
+
   return (
     <header className="header">
 
- 
+    {isPopUpOpen?<NavPopUp onPopUpClose={()=>{setIsPopUpOpen(false)}}/>:null}
 
+  
 
 
   <Navbar collapseOnSelect expand="md" className="nav">
@@ -23,17 +32,20 @@ function Header(props) {
           width="30"
           height="30"
           className="mainLogo"
+          href="."
         />
         </Navbar.Brand>
 
       {/*
     */} 
 
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" >
-    <FontAwesomeIcon icon={solid('bars')} className="hamburger icon" />
+    <button aria-controls="responsive-navbar-nav" className="hamburgerButton" onClick={()=>{
+      setIsPopUpOpen(true)
+    }}>
+    <FontAwesomeIcon icon={solid('bars')} className="hamburgerIcon icon" />
 
 
-    </Navbar.Toggle>
+    </button>
    
 
 
@@ -42,20 +54,20 @@ function Header(props) {
 
           <Nav className="ms-auto">
 
-            <Nav.Link href="#">About</Nav.Link>
-            <span className="x">x</span>
-            <Nav.Link href="#">Skills</Nav.Link>
+            <Nav.Link href="#desc">About</Nav.Link>
             <span className="x">x</span>
 
-            <Nav.Link href="#">Works</Nav.Link>
-            <span className="x">x</span>
 
-            <Nav.Link href="#">Contact</Nav.Link>
-            <span className="x">x</span>
 
-            <Nav.Link href="#">Extras</Nav.Link>
+            <Nav.Link href="#home">Get to know</Nav.Link>      
             <span className="x">x</span>
-            <Nav.Link href="#" className="resume">Resume</Nav.Link>
+            
+            <Nav.Link href="#contact">Contact</Nav.Link>
+            <span className="x">x</span>
+            <Nav.Link href="#contact">Resume</Nav.Link>
+    
+
+            
 
           </Nav>
           

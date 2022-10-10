@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,Suspense,useEffect  } from "react";
 import { Row, Col } from "react-bootstrap";
+import { Title } from "./Title";
 
-import {Swipes} from "./Swipes";
-
+const Swipes = React.lazy(() => import("./Swipes"));
+// import {Swipes} from "./Swipes";
 
 
 
@@ -10,32 +11,33 @@ import {Swipes} from "./Swipes";
 function Home() {
 
 
-  const [page,setPage]=useState(0);
+
   const [controlledSwiper,setControlledSwiper]=useState(null);
-
- 
-
   const [display,setDisplay]=useState(false);
+
+
+  
+
+
   function Display(e){
 
     if(!display){
       setDisplay(!display);
-      setPage(e.target.value);
-    
+      controlledSwiper.slideTo(e.target.name);
+
     }
     else{
-      
       if(controlledSwiper){
-        
 
-        if(controlledSwiper.activeIndex.toString()===e.target.value){
+
+        if(controlledSwiper.activeIndex.toString()===e.target.name){
           console.log("dude");
           setDisplay(!display); 
-
         }
         else{
-
-          controlledSwiper.slideTo(e.target.value);
+          
+          
+          controlledSwiper.slideTo(e.target.name);
         }
    
       }
@@ -46,48 +48,49 @@ function Home() {
 
 
   return (
-    <section className="home">
-    <div className="question">
+    <section className="home classMargin"  id="home">
+
+    
+    
+    <div className="question" id="question">
+
       <h3>
         They said first impression is everything. So I’m gonna let you choose,
         How would you like to know me.
-        {/*
-        Howdy! I’m Noppheera, A guy that loves to create various things and is very into the web-development. I’m beyond ready to join and assist you, in other words. To make your ambitious goal a little bit more clearer
-        */}
+   
       </h3>
-      </div>
+    </div>
 
-      {display?
-        <Swipes onSwiper={setControlledSwiper} page={page}/>:null     
-      
-      
-      }
-
-
+   
+    
+    <Suspense>
+    <Swipes style={{ display: display? 'block': 'none' }} onSwiper={setControlledSwiper}/>
+    </Suspense>
 
       <div className="buttonSet">
       <Row>
         <Col sm={12} md={4}>
           <div>
-          <button onClick={Display} value={0}>
-          As Developer
-          </button>
+  
+          
+          <a href={display?"#question":"#desc"} onClick={Display} name={0}>As Developer</a>
+
+  
           </div>
         </Col>
         <Col sm={12} md={4}>
           <div>
-          <button onClick={Display} value={1}>
+
+          <a href={display?"#question":"#desc"} onClick={Display} name={1}>As Designer</a>
+
           
-          As Designer
-          </button>
+    
           </div>
         </Col>
         <Col sm={12} md={4}>
           <div>
-          <button onClick={Display} value={2}>
-          As Myself
-          
-          </button>
+          <a href={display?"#question":"#desc"} onClick={Display} name={2}>As Myself</a>
+
           </div>
         </Col>
       </Row>

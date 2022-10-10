@@ -11,15 +11,15 @@ function Footer(){
     const year=date.getFullYear();
 
     return (
-        <footer className="footer">
+        <footer className="footer classMargin">
 
         <Row>
-        <Col  sm={12} md={2}>
+        <Col  sm={12} md={2} className="footCol footCol1">
         <div className="footerPicDiv">
           <img src="/images/logomainred.jpg" alt="" className="footerPic"/>
           </div>
         </Col>
-        <Col  sm={12} md={6}>
+        <Col  sm={12} md={7} className="footCol footCol2">
           <div className="footerDescDiv">
           <p>
          
@@ -28,16 +28,16 @@ function Footer(){
           Handcrafted from dust by Noppheera B.
           <br/>
           &#169;{year} MossarellaDev
-          <br/>
+    
            All rights reserved 
           
           </p>
           </div>
         </Col>
-        <Col  sm={12} md={4}>
+        <Col  sm={12} md={3} className="footCol footCol3">
           <div className="footerReachDiv">
           <p>
-          Reach out
+          Reach me
 
           <br/>
           
@@ -47,8 +47,8 @@ function Footer(){
           <FontAwesomeIcon icon={brands('youtube-square')} className="icon" />
           <FontAwesomeIcon icon={brands('github-square')} className="icon" />
 
-          
           </p>
+          
           </div>
           </Col>
       </Row>

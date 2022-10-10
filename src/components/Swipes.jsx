@@ -1,10 +1,15 @@
-import React from "react";
+import React,{Suspense} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar,Navigation,Pagination } from "swiper";
 
-import { Skill } from "./Skill";
-import { Work } from "./Work";
-import { Extra } from "./Extra";
+
+// const Skill = React.lazy(() => import("./Skill"));
+// const Work = React.lazy(() => import("./Work"));
+// const Extra = React.lazy(() => import("./Extra"));
+
+import {Skill} from "./Skill";
+import {Work} from "./Work";
+import {Extra} from "./Extra";
 
 function Swipes(props){
 
@@ -12,7 +17,7 @@ function Swipes(props){
 
 
 
-    return(<div className="swipes">
+    return(<div className="swipes" id="swipes" style={props.style}>
 
 
 <Swiper
@@ -20,7 +25,7 @@ scrollbar={{
   hide: true,
   // draggable: true
 }}
-initialSlide={props.page}
+// initialSlide={props.page}
 navigation={true}
 modules={[Scrollbar,Navigation,Pagination]}
 className="mySwiper"
@@ -31,17 +36,23 @@ onSwiper={(swiper) => props.onSwiper(swiper)}
 
 >
 <SwiperSlide className="swiper-slide">
-<Skill>
-</Skill>
+
+<Work/>
+
 
 </SwiperSlide>
 <SwiperSlide className="swiper-slide">
-<Work>
-</Work>
+
+<Skill/>
+
+
+
 </SwiperSlide>
 <SwiperSlide className="swiper-slide">
-  <Extra>
-  </Extra>
+
+<Extra/>
+
+
 </SwiperSlide>
 
 
@@ -50,5 +61,5 @@ onSwiper={(swiper) => props.onSwiper(swiper)}
 )
 }
 
-export {Swipes};
+export  default Swipes;
 
