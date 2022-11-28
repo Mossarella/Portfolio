@@ -1,0 +1,113 @@
+import React, { useState,Suspense,useEffect  } from "react";
+import { Row, Col } from "react-bootstrap";
+
+
+const Swipes = React.lazy(() => import("./Swipes"));
+// import {Swipes} from "./Swipes";
+
+
+
+
+function Home() {
+
+
+
+  const [controlledSwiper,setControlledSwiper]=useState(null);
+  const [display,setDisplay]=useState(false);
+
+
+  
+
+
+  function Display(e){
+
+    if(!display){
+      setDisplay(!display);
+      controlledSwiper.slideTo(e.target.name);
+
+    }
+    else{
+      if(controlledSwiper){
+
+
+        if(controlledSwiper.activeIndex.toString()===e.target.name){
+          console.log("dude");
+          setDisplay(!display); 
+        }
+        else{
+          
+          
+          controlledSwiper.slideTo(e.target.name);
+        }
+   
+      }
+      
+    }
+  }
+
+
+
+  return (
+    <section className="home classMargin"  id="home">
+
+    
+    
+    <div className="question" id="question">
+
+      <h3>
+        They said <span className="questionSpan">first impression</span> is everything. 
+        <br/>
+        So.., How would you like to know me as.
+   
+      </h3>
+    </div>
+
+   
+    
+    <Suspense>
+    <Swipes style={{ display: display? 'block': 'none' }} onSwiper={setControlledSwiper}/>
+    </Suspense>
+
+      <div className="buttonSet">
+      <Row>
+        <Col xs={4} sm={4} md={4}>
+          <div>
+  
+          
+          <a href={display?"#question":"#question"} onClick={Display} name={0}>As Developer</a>
+
+  
+          </div>
+        </Col>
+        <Col xs={4} sm={4} md={4}>
+          <div>
+
+          <a href={display?"#question":"#question"} onClick={Display} name={1}>As Designer</a>
+
+          
+    
+          </div>
+        </Col>
+        <Col xs={4} sm={4} md={4}>
+          <div>
+          <a href={display?"#question":"#question"} onClick={Display} name={2}>As Me</a>
+
+          </div>
+        </Col>
+      </Row>
+      </div>
+
+
+     
+
+
+
+    </section>
+
+
+
+    
+  );
+}
+
+export { Home };

@@ -1,72 +1,217 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React,{forwardRef} from "react";
+import { Row, Col, Container } from "react-bootstrap";
+import {Title} from "./Title";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {Autoplay, Scrollbar, Navigation, Pagination, Thumbs, FreeMode } from "swiper";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { containerMotion, cardVariantMotion } from "../AppearOnScroll";
 
-function Extra(){
+const Extra = forwardRef((props,ref)=>{
     return (
-        <div>
-          <h1>
-          As Myself
-          </h1>
-          <p>
-          There are a lot fun stuff in this world. I have so much hobbies and things going on in mind. Normally if i got free time. I do Art. Reading things. Writing things. Video games. GameDev. And a lot on the internet.
-        Heck, I’m not a nerd. If you wanna hang out. Just hit me up! I Would considered myself an veryyyy easy guy. Again, some stuff I’ve create here
 
-          
-            
-
-          
-          </p>
-    
-          <Row>
-            <Col sm={12} md={12}>
-              <div>
-          
-              Frontend side
-              <div className="frontEndRow">
       
-
-
-              
-              
+      <section className="extra classMargin"  id="extra" ref={ref}>
+      
+      <div className="minPad ">
      
-              </div>
-             
-    
-         
-              </div>
-            </Col>
-            <Col sm={12} md={12}>
-              <div>
-         
-              
-              Backend side
-              <div className="frontEndRow">
-    
-              
-    
-              </div>
-    
-              </div>
-            </Col>
-            <Col sm={12} md={12}>
-              <div>
-    
-              Something worth mention
-    
-              <div className="frontEndRow">
-    
-              
-    
-              </div>
+      <motion.div
+            variants={cardVariantMotion}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+          <div className="bigPad ">
+      <Title titleText={"As Myself."} align="left"></Title>
+          <p className="justify extraDesc mb-0">
+          &emsp;I have got so much hobbies. Normally if i do got free time. I do Art. Reading things. Writing things. Video games. Game assets. GameDev. And a lot on the internet.
+        But If you wanna hang out. Just hit me up anytime! 
+          </p>
+          </div>
+          </motion.div>
+          
+
       
-              </div>
-            </Col>
-          </Row>
+          <motion.div
+          className="extraDiv smallPad pad"
+          variants={cardVariantMotion}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          whileInView="whileInView"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <Container fluid className=" position-relative extraContent ">
+          <Swiper
+          navigation={true}
+          centeredSlides={true}
+   
+          loop={true}
+          slidesPerView={"auto"}
+          spaceBetween={15}
+          // breakpoints={{
+          //   1:{
+          //     slidesPerView: 1,
+          //     spaceBetween: 15,
+          //   },
+          //   767.98: {
+          //     slidesPerView: 1,
+          //     spaceBetween: 15,
+          //   },
+          //   991.98: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 15,
+          //   },
+          //   1199.98:{
+          //     slidesPerView: 4,
+          //     spaceBetween: 15,
+          //   }
+          // }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay,Pagination,Navigation]}
+          className="mySwiper h-100"
+        >
+        
+       
+          <SwiperSlide className="swiperItem unfixedWidthL">
+     
+          <div className="  zoomable extraSwiperDiv">
+          <img className="projImg" src="/images/pixel/STAGE TEST-export.png" alt="" />
+          </div>
     
-          Some stuff i have built
+          
+
+      </SwiperSlide>
+      {/* 
+      <SwiperSlide className=" swiperItem unfixedWidthL">
+      
+      
+      <div className="zoomable   extraSwiperDiv">
+      <img className="projImg" src="/images/Untitled-1.jpg" alt="" />
+      </div>
+      
+      
+      
+      
+      </SwiperSlide>
+    */}
     
-        </div>
+
+          <SwiperSlide className="swiperItem unfixedWidthM">
+     
+          <div className="  zoomable extraSwiperDiv">
+          <img className="projImg" src="/images/pixel/owlmergeedited.jpg" alt="" />
+          </div>
+    
+          
+
+      </SwiperSlide>
+      <SwiperSlide className=" swiperItem unfixedWidthS">
+      
+            
+      <div className="zoomable   extraSwiperDiv">
+      <img className="projImg" src="/images/pixel/bernardmerged.png" alt="" />
+      </div>
+    
+     
+      
+
+    </SwiperSlide>
+          <SwiperSlide className="swiperItem unfixedWidthS">
+     
+          <div className="  zoomable extraSwiperDiv">
+          <img className="projImg" src="/images/pixel/S__31539722.jpg" alt="" />
+          </div>
+    
+          
+
+      </SwiperSlide>
+          <SwiperSlide className=" swiperItem unfixedWidthS">
+      
+            
+            <div className="zoomable   extraSwiperDiv">
+            <img className="projImg" src="/images/pixel/reynauldmerge1.png" alt="" />
+            </div>
+          
+           
+            
+     
+          </SwiperSlide>
+    
+          <SwiperSlide className="swiperItem unfixedWidthL">
+     
+          <div className="  zoomable extraSwiperDiv">
+          <img className="projImg" src="/images/LINE_ALBUM_เที่ยวสมาคม_221116.jpg" alt="" />
+          </div>
+    
+          
+
+      </SwiperSlide>
+          <SwiperSlide className=" swiperItem unfixedWidthS">
+      
+            
+            <div className="zoomable   extraSwiperDiv">
+            <img className="projImg" src="/images/S__3153938.jpg" alt="" />
+            </div>
+          
+           
+            
+     
+          </SwiperSlide>
+
+       
+          
+     
+    
+        </Swiper>
+
+          <img className="pixel pix1" src="/images/pixel/chicky-export.gif" alt="" />
+          <img className="pixel pix2" src="/images/pixel/133892.gif" alt="" />
+          <img className="pixel pix3" src="/images/pixel/ninja-Recoveraaaed.gif" alt="" />
+          <img className="pixel pix4" src="/images/unity-69-logo-png-transparent.png" alt="" />
+     
+          <img className="pixel pix5" src="/images/pixel/cloud.png" alt="" />
+{/* 
+*/}
+          <img className="pixel pix6" src="/images/pixel/Sprite-0003.png" alt="" />
+          <img className="pixel pix7" src="/images/pixel/133890.gif" alt="" />
+          <img className="pixel pix8" src="/images/pixel/poikat.gif" alt="" />
+          <img className="pixel pix9" src="/images/pixel/heart-export.gif" alt="" />
+         
+          </Container>
+          
+          </motion.div>
+          
+     
+          <motion.div
+    
+ 
+    
+      
+          variants={cardVariantMotion}
+              initial='initial'
+              animate='animate'
+              exit='exit'
+          whileInView='whileInView'
+          viewport={{ once: true, amount: 0.5 }}
+          
+          >
+          <div className="bigPad ">
+          <div className="underLine ">    </div>
+          <p className="skillDesc2">There are lot of fun stuff in this world. Wanna do it together?</p>
+          </div>
+          </motion.div>
+
+
+          </div>
+      
+        </section>
       );
-    }
+    });
 
 export  {Extra};

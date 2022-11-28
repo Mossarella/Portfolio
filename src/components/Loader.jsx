@@ -1,29 +1,56 @@
-import React, { Suspense } from "react";
+import React, { Suspense,useState } from "react";
+import {motion} from "framer-motion";
+import {AnimatePresence} from "framer-motion"
 
-let trueLoadingTime=3000;
-let loadingTime=0;
-const App = React.lazy(() => {
-    return Promise.all([
-      import("./App"),
-      new Promise(resolve => setTimeout(resolve, loadingTime))
-    ])
-    .then(([moduleExports]) => moduleExports);
-  });
+
+
+
+
+
+ // <div className="loader">
+    // </div>
+    // Loading
+    // </div>
+    let trueLoadingTime=3000;
+    let loadingTime=0;
+    const App = React.lazy(() => {
+        return Promise.all([
+          import("./App"),
+          new Promise(resolve => setTimeout(resolve, trueLoadingTime))
+        ])
+        .then(([moduleExports]) => moduleExports)
+        
+      });
 
   function LoadingScreen(){
-    return <div>Loading</div>
+    return <div className="loaderComponent">
+    
+
+    <img className="loadingIcon" src="/images/logonewnewnew9.gif" alt="" />
+
+    </div>
   }
 
 function Loader() {
-    return (
-      <div>
+  
 
+
+
+    return (
+      <AnimatePresence  mode={"wait"} >
+      <motion.div 
+   
+      key={"loader"}>
+
+      <AnimatePresence  mode={"wait"} >
       <Suspense fallback={LoadingScreen()}>
-      <App />
-        </Suspense>
-        
-      </div>
+      <App key={"app"} />
+      </Suspense>
+      
+      </AnimatePresence>
+      </motion.div>
+      </AnimatePresence>
     );
   }
   
-  export { Loader };
+  export { Loader,LoadingScreen };

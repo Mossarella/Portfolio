@@ -1,104 +1,99 @@
 import React, { useState,Suspense,useEffect  } from "react";
 import { Row, Col } from "react-bootstrap";
-import { Title } from "./Title";
 
-const Swipes = React.lazy(() => import("./Swipes"));
+
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+
 // import {Swipes} from "./Swipes";
 
+import { containerMotion,cardVariantMotion } from '../AppearOnScroll';
 
+
+const MotionCol = motion(Col);
 
 
 function Home() {
 
 
 
-  const [controlledSwiper,setControlledSwiper]=useState(null);
-  const [display,setDisplay]=useState(false);
 
 
   
 
 
-  function Display(e){
-
-    if(!display){
-      setDisplay(!display);
-      controlledSwiper.slideTo(e.target.name);
-
-    }
-    else{
-      if(controlledSwiper){
-
-
-        if(controlledSwiper.activeIndex.toString()===e.target.name){
-          console.log("dude");
-          setDisplay(!display); 
-        }
-        else{
-          
-          
-          controlledSwiper.slideTo(e.target.name);
-        }
-   
-      }
-      
-    }
-  }
+  
 
 
 
   return (
-    <section className="home classMargin"  id="home">
+    <section className="home"  id="home">
 
     
     
-    <div className="question" id="question">
+    <motion.div  
+    key={"home"}
+    variants={containerMotion}
+    initial='initial'
+    animate='animate'
+    exit='exit'
+whileInView='whileInView'
+viewport={{ once: true, amount: 0.5 }}>
 
+    <div  className="question pad" id="question">
+  
+    <motion.div variants={cardVariantMotion}>
       <h3>
-        They said first impression is everything. So I’m gonna let you choose,
-        How would you like to know me.
+        They said <span className="bold ">first impression</span> is everything. 
+        <br/>
+        So.., How would you like to know me as.
    
       </h3>
-    </div>
-
+      </motion.div>
+</div>
    
     
-    <Suspense>
-    <Swipes style={{ display: display? 'block': 'none' }} onSwiper={setControlledSwiper}/>
-    </Suspense>
+    
 
       <div className="buttonSet">
       <Row>
-        <Col sm={12} md={4}>
+        <MotionCol variants={cardVariantMotion} xs={12} sm={12} md={4}>
           <div>
   
           
-          <a href={display?"#question":"#desc"} onClick={Display} name={0}>As Developer</a>
+          
+          <a href="#work" name={0}><button className="btn-normal">As Developer</button></a>
+          
 
   
           </div>
-        </Col>
-        <Col sm={12} md={4}>
+        </MotionCol>
+        <MotionCol variants={cardVariantMotion} xs={12} sm={12} md={4}>
           <div>
 
-          <a href={display?"#question":"#desc"} onClick={Display} name={1}>As Designer</a>
+          
+          
+          <a href="#skill" name={1}><button className="btn-normal">As Designer </button></a>
+         
 
           
     
           </div>
-        </Col>
-        <Col sm={12} md={4}>
+        </MotionCol>
+        <MotionCol variants={cardVariantMotion} xs={12} sm={12} md={4}>
           <div>
-          <a href={display?"#question":"#desc"} onClick={Display} name={2}>As Myself</a>
+          
+          <a href="#extra" name={2}><button className="btn-normal">As Me</button></a>
+          
 
           </div>
-        </Col>
+        </MotionCol>
       </Row>
       </div>
 
 
      
-
+      </motion.div>
 
 
     </section>

@@ -1,8 +1,11 @@
-import React,{useEffect} from "react";
+import React,{forwardRef, useEffect} from "react";
 import { Container } from "react-bootstrap";
 
 
-function Title(props){
+const Title = forwardRef((props,ref)=>{
+
+
+
 
 
 
@@ -10,15 +13,15 @@ function Title(props){
 
 
     return(
-        <div className="title" >
-            <h1>
+        <div  style={{ textAlign: props.align }} >
+            <h1 className="title ">
             {props.titleText}
-            <Container fluid className="underLine">
+            <Container fluid className="underLine orange" ref={ref}>
         
             </Container>
             </h1>
         </div>
     )
-}
+});
 
 export {Title};
