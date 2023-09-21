@@ -183,7 +183,7 @@ function Header(props) {
             <motion.span
             variants={item}
             >
-              <a  href="/pdf/Noppheera_Resume_2022.pdf" rel='noopener noreferrer' className="nav-link resumeBtn">
+              <a  href="/pdf/Noppheera_Resume_2023.pdf" rel='noopener noreferrer' className="nav-link resumeBtn">
                 Resume
               </a>
             </motion.span>

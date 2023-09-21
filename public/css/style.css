@@ -1,3 +1,5 @@
+
+
 /* root */
 :root {
   --myPadding0: 0em;
@@ -49,9 +51,12 @@
   position: fixed;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100%;
+  height: 100%;
+  height: 100dvh;
+  width: 100vw;
   color: var(--myWhite);
-
+  overflow: hidden;
 }
 
 .loadingIcon{
@@ -456,6 +461,7 @@ a:hover {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 /* bg */
@@ -464,7 +470,7 @@ a:hover {
   z-index: -9999;
   position: absolute;
 
-  width: 100%;
+  width: 100vw;
  
 
   background-image: url("/images/dark-stripes-light.png");
@@ -507,6 +513,11 @@ body::-webkit-scrollbar-thumb {
 /* firefox */
 html {
   scrollbar-width: thin;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+
   scrollbar-color: var(--myMain) var(--myBlack);
 }
 .scroll-down .nav {
@@ -520,6 +531,7 @@ html {
 }
 /* body */
 body {
+
 
   font-size: 1.2em;
   font-family: "Rubik", sans-serif;
@@ -567,7 +579,7 @@ body {
 
 
 .mouseWheel {
-  width: 20px;
+  width: 15px;
   height: auto;
   vertical-align: baseline;
 }
@@ -632,7 +644,7 @@ body {
   font-family: "Space Mono", monospace;
   border-bottom: 1px solid var(--myWhite);
   box-shadow: var(--myBlack) 0px 4px 0 0;
-
+  width: 100%;
   /* background-color: rgba(16, 177, 100, 0.485); */
 }
 .navbar-toggler,
@@ -718,6 +730,11 @@ body {
   color: var(--myBlack);
   opacity: 15%;
 }
+.clampFont{
+  font-size: clamp(0.2em, 2.2vw, 0.9em)
+}
+
+
 .getToKnowBounce{
   transition: all 0.2s ease-in-out ;
 }

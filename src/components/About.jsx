@@ -88,7 +88,7 @@ function About(){
         <h3 className='aboutDescMain'>
         Web developer based in Bangkok,
         <br/>
-        that love to  build various stuff on web  
+        that love to  build various stuff online  
         <br/> 
         and very passionate about it.
         </h3>
@@ -111,11 +111,11 @@ function About(){
 
     <motion.div className='aboutGetToKnow' variants={appear}>
     <h6 className='color1 bounce2'>
-    <span className='iconSpan bounce2 '><BsFillMouseFill className=" mouseWheel"/></span>
-    <a href="#desc" className='orange getToKnowBounce fst-italic subFont'>
+    <span className='iconSpan bounce2 clampFont'><BsFillMouseFill className=" mouseWheel"/></span>
+    <a href="#desc" className='orange getToKnowBounce fst-italic subFont clampFont'>
     &nbsp;Ready to get to know each other? Scroll down.&nbsp;
     </a>
-    <span className='iconSpan bounce2 '><BsFillMouseFill className=" mouseWheel"/></span>
+    <span className='iconSpan bounce2 clampFont'><BsFillMouseFill className=" mouseWheel"/></span>
     </h6>
    
     </motion.div>

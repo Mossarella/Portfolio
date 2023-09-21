@@ -7,6 +7,8 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaCoins,
+  FaDocker,
+  FaJira
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -16,8 +18,12 @@ import {
   SiExpress,
   SiAdobexd,
   SiFirebase,
+  SiAngular,
+  SiKubernetes,
+  SiTypescript
 } from "react-icons/si";
 import { GiGears } from "react-icons/gi";
+import { AiFillCheckSquare } from "react-icons/ai";
 import { CgFigma, CgFramer } from "react-icons/cg";
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { BsFillTerminalFill } from "react-icons/bs";
@@ -49,7 +55,7 @@ const Work = forwardRef((props, ref) => {
 
               <p className="workDesc">
                 &emsp;I’ve sparked with programming since I’m in college and
-                manage to spent my little free time to practice it since.
+                manage to spent my little free time to sharpen it.
                 Building things and bring it to life always give me joy, Here
                 are some skill and technologies I’m capable of.
               </p>
@@ -68,7 +74,7 @@ const Work = forwardRef((props, ref) => {
               <MotionCol variants={cardVariantMotion} sm={12} md={12} lg={4}>
                 <div className="skillBoxWhole ">
                   <Row className="skillTitle">
-                    <p className="bold">FE</p>
+                    <p className="bold">Frontend</p>
                   </Row>
                   <Row className="skillTitle2" xs={3} sm={3} md={3} lg={2}>
                     <div className="skillBox">
@@ -83,9 +89,9 @@ const Work = forwardRef((props, ref) => {
                     </div>
 
                     <div className="skillBox">
-                      <SiJavascript className="skillIcon" />
+                      <SiTypescript className="skillIcon" />
                       <br />
-                      JS(es6+)
+                      JS/TS
                     </div>
                     <div className="skillBox">
                       <FaBootstrap className="skillIcon" />
@@ -103,13 +109,26 @@ const Work = forwardRef((props, ref) => {
                       <br />
                       React
                     </div>
+                     <div className="skillBox">
+                      <SiAngular className="skillIcon" />
+                      <br />
+                      Angular
+                    </div>
+            
+                    
+                    <div className="skillBox">
+                      <CgFramer className="skillIcon" />
+                      <br />
+                      Framer
+                    </div>
+               
                   </Row>
                 </div>
               </MotionCol>
               <MotionCol variants={cardVariantMotion} sm={12} md={12} lg={4}>
                 <div className="skillBoxWhole ">
                   <Row className="skillTitle">
-                    <p className="bold">BE</p>
+                    <p className="bold">Backend</p>
                   </Row>
 
                   <Row className="skillTitle2" xs={3} sm={3} md={3} lg={2}>
@@ -143,13 +162,18 @@ const Work = forwardRef((props, ref) => {
                       <br />
                       RestfulAPIs
                     </div>
+                    <div className="skillBox">
+                      <SiFirebase className="skillIcon" />
+                      <br />
+                      Firebase
+                    </div>
                   </Row>
                 </div>
               </MotionCol>
               <MotionCol variants={cardVariantMotion} sm={12} md={12} lg={4}>
                 <div className="skillBoxWhole ">
                   <Row className="skillTitle">
-                    <p className="bold">OTHERS</p>
+                    <p className="bold">Misc</p>
                   </Row>
 
                   <Row className="skillTitle2" xs={3} sm={3} md={3} lg={2}>
@@ -161,28 +185,42 @@ const Work = forwardRef((props, ref) => {
                     <div className="skillBox">
                       <CgFigma className="skillIcon" />
                       <br />
-                      UXUI
+                      Figma/XD
                     </div>
-
                     <div className="skillBox">
                       <BsArrowsFullscreen className="skillIcon" />
                       <br />
                       Responsive
                     </div>
+
+              
                     <div className="skillBox">
                       <BsFillTerminalFill className="skillIcon" />
                       <br />
-                      Terminal
+                      CLI
+                    </div>
+            
+                  
+                    <div className="skillBox">
+                      <AiFillCheckSquare className="skillIcon" />
+                      <br />
+                      Unit test
+                    </div>
+                    
+                    <div className="skillBox">
+                      <FaDocker className="skillIcon" />
+                      <br />
+                      Docker
                     </div>
                     <div className="skillBox">
-                      <SiFirebase className="skillIcon" />
+                      <SiKubernetes className="skillIcon" />
                       <br />
-                      Firebase
+                      Kubes
                     </div>
                     <div className="skillBox">
-                      <CgFramer className="skillIcon" />
+                      <FaJira className="skillIcon" />
                       <br />
-                      Framer
+                      Jira
                     </div>
                   </Row>
                 </div>

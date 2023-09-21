@@ -12,7 +12,7 @@ const Contact = forwardRef((props,ref)=>{
 
   const { ref1, ref2,ref3 } = ref;
 
-  console.log(ref)
+
 
   const [showToolTip, setShowToolTip] = useState(false);
 
@@ -28,7 +28,7 @@ const Contact = forwardRef((props,ref)=>{
       navigator.clipboard.writeText(eMail);
     
       // Alert the copied text
-      console.log("Copied the text: " + eMail);
+  
       HandleShowToolTip();
   }
 
@@ -74,7 +74,8 @@ const Contact = forwardRef((props,ref)=>{
       <div className='contactButtonDiv'>
       
       <button className='btn-normal' ref={ref3}>
-      <a href="mailto:mossarellastudio@gmail.com" rel="noopener noreferrer" target={"_blank"}>Say hello</a>
+      <a href="mailto:mossarellastudio@gmail.com" rel="noopener noreferrer" target="_blank">Say hello</a>
+      
       </button>
       
       </div>

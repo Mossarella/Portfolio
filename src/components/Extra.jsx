@@ -26,7 +26,7 @@ const Extra = forwardRef((props,ref)=>{
           <div className="bigPad ">
       <Title titleText={"As Myself."} align="left"></Title>
           <p className="justify extraDesc mb-0">
-          &emsp;I have got so much hobbies. Normally if i do got free time. I do Art. Reading things. Writing things. Video games. Game assets. GameDev. And a lot on the internet.
+          &emsp;I'm born creative by heart. Which leads to so much hobbies. Normally if i do got free time. I do Art. Reading things. Writing things. Video games. GameDev. And a lot on the internet.
         But If you wanna hang out. Just hit me up anytime! 
           </p>
           </div>
@@ -81,7 +81,7 @@ const Extra = forwardRef((props,ref)=>{
           <SwiperSlide className="swiperItem unfixedWidthL">
      
           <div className="  zoomable extraSwiperDiv">
-          <img className="projImg" src="/images/pixel/STAGE TEST-export.png" alt="" />
+          <img className="projImg" src="/images/pixel/STAGE TEST-export2.png" alt="" />
           </div>
     
           
@@ -122,37 +122,60 @@ const Extra = forwardRef((props,ref)=>{
       
 
     </SwiperSlide>
-          <SwiperSlide className="swiperItem unfixedWidthS">
+    <SwiperSlide className="swiperItem unfixedWidthM">
      
-          <div className="  zoomable extraSwiperDiv">
-          <img className="projImg" src="/images/pixel/S__31539722.jpg" alt="" />
-          </div>
-    
-          
+     <div className="  zoomable extraSwiperDiv">
+     <img className="projImg" src="/images/FvhPPNCaEAAyssW.jpg" alt="" />
+     </div>
 
-      </SwiperSlide>
-          <SwiperSlide className=" swiperItem unfixedWidthS">
+     
+
+ </SwiperSlide>
+          
       
-            
-            <div className="zoomable   extraSwiperDiv">
-            <img className="projImg" src="/images/pixel/reynauldmerge1.png" alt="" />
-            </div>
-          
-           
-            
+      <SwiperSlide className="swiperItem unfixedWidthL">
      
-          </SwiperSlide>
-    
-          <SwiperSlide className="swiperItem unfixedWidthL">
-     
-          <div className="  zoomable extraSwiperDiv">
-          <img className="projImg" src="/images/LINE_ALBUM_เที่ยวสมาคม_221116.jpg" alt="" />
-          </div>
-    
-          
+     <div className="  zoomable extraSwiperDiv">
+     <img className="projImg" src="/images/pixel/FszfiSvaEAA4U_1.jpg" alt="" />
+     </div>
 
-      </SwiperSlide>
-          <SwiperSlide className=" swiperItem unfixedWidthS">
+     
+
+ </SwiperSlide>
+      <SwiperSlide className="swiperItem unfixedWidthS">
+     
+     <div className="  zoomable extraSwiperDiv">
+     <img className="projImg" src="/images/47924.jpg" alt="" />
+     </div>
+
+     
+
+ </SwiperSlide>
+      <SwiperSlide className="swiperItem unfixedWidthL">
+     
+     <div className="  zoomable extraSwiperDiv">
+     <img className="projImg" src="/images/47925.jpg" alt="" />
+     </div>
+
+     
+
+ </SwiperSlide>
+      <SwiperSlide className="swiperItem unfixedWidthL">
+     
+     <div className="  zoomable extraSwiperDiv">
+     <img className="projImg" src="/images/D7BC8C24-9B6D-44BE-80FA-A4EEA25C03D3.jpg" alt="" />
+     </div>
+
+     
+
+ </SwiperSlide>
+
+
+ 
+ 
+
+
+          {/* <SwiperSlide className=" swiperItem unfixedWidthS">
       
             
             <div className="zoomable   extraSwiperDiv">
@@ -162,7 +185,7 @@ const Extra = forwardRef((props,ref)=>{
            
             
      
-          </SwiperSlide>
+          </SwiperSlide> */}
 
        
           

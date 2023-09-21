@@ -31,7 +31,7 @@ function Home() {
 
 
         if(controlledSwiper.activeIndex.toString()===e.target.name){
-          console.log("dude");
+         
           setDisplay(!display); 
         }
         else{

@@ -74,19 +74,19 @@ function App() {
 
     if(currentScroll.current<=0){
       body.classList.remove("scroll-up");
-      console.log("condition1");
+    
 
     }
     if(currentScroll.current>lastScroll&&!body.classList.contains("scroll-down")){
       body.classList.remove("scroll-up");
       body.classList.add("scroll-down");
-      console.log("condition2");
+  
 
     }
     if(currentScroll.current< lastScroll&&body.classList.contains("scroll-down")){
       body.classList.remove("scroll-down");
       body.classList.add("scroll-up");
-      console.log("condition3");
+    
     }
 
     lastScroll=currentScroll.current;
@@ -168,9 +168,10 @@ function App() {
   ███████    ██    ██   ██ ██   ██ ██   ████  ██████  ███████ ██   ██  
                                 
                                                                           
-  ########################################################   
-  This website was designed and built by Noppheera B.
+  ########################################################  
+  You found the hidden easter egg, Hooray!
 
+  This website was designed and built by Noppheera B.
   I'm having way too much fun creating this !   
   ########################################################                                                                      
                                                                               

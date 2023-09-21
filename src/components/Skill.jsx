@@ -32,7 +32,7 @@ function Skill() {
         <p className="justify skillDesc">
           &emsp;Studied directly from design major. I have got
           some <span className="strike">mad</span> advance understanding in
-          design skill from ground up. I indeed can adapt and improvise my knowledge to many possibilities in various way. Here are some of my
+          design skill from ground up. And not only architecture aesthetics, I indeed can adapt and improvise my knowledge to many possibilities in various way. Here are some of my
           design related work I’ve gathered.
         </p>
         </motion.div>

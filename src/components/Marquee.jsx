@@ -25,7 +25,7 @@ function Marquee() {
         <h3>&#8226;</h3>
         <h3>DESIGN</h3>
         <h3>&#8226;</h3>
-        <h3>ANIMATION</h3>
+        <h3>ANIMATE</h3>
         <h3>&#8226;</h3>
         <h3>IDEA</h3>
         <h3>&#8226;</h3>
@@ -50,7 +50,7 @@ function Marquee() {
         <h3>&#8226;</h3>
         <h3>DESIGN</h3>
         <h3>&#8226;</h3>
-        <h3>ANIMATION</h3>
+        <h3>ANIMATE</h3>
         <h3>&#8226;</h3>
         <h3>IDEA</h3>
         <h3>&#8226;</h3>

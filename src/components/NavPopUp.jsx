@@ -92,7 +92,7 @@ const HandleClose = async () => {
         <a href="#contact" onClick={props.onPopUpClose}> <button className="btn-normal">Contact </button></a>
         </motion.span>
         <motion.span variants={letterAnimate}>
-        <a  href="/pdf/Noppheera_Resume_2022.pdf" rel='noopener noreferrer' onClick={props.onPopUpClose}><button className="btn-normal">Resume    </button></a>
+        <a  href="/pdf/Noppheera_Resume_2023.pdf" rel='noopener noreferrer' onClick={props.onPopUpClose}><button className="btn-normal">Resume    </button></a>
         </motion.span>
         </div>
         </motion.div>
